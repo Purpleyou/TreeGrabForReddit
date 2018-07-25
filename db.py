@@ -55,10 +55,10 @@ class Database(object):
         self.make_log_table()
         if unique_ids.get('threads',True):
             self.cur.execute("""CREATE TABLE IF NOT EXISTS %s.threads(
-            id CHAR(6) PRIMARY KEY,
+            id CHAR(30) PRIMARY KEY,
             title TEXT,
             subreddit VARCHAR(30),
-            subreddit_id VARCHAR(9),
+            subreddit_id VARCHAR(30),
             created TIMESTAMP,
             score INT,
             percentage FLOAT,
@@ -95,7 +95,7 @@ class Database(object):
             id CHAR(6),
             title TEXT,
             subreddit VARCHAR(30),
-            subreddit_id VARCHAR(9),
+            subreddit_id VARCHAR(30),
             created TIMESTAMP,
             score INT,
             percentage FLOAT,
@@ -166,10 +166,10 @@ class Database(object):
             print 'made users table'
         if unique_ids.get('comments', True):
             self.cur.execute("""CREATE TABLE IF NOT EXISTS %s.comments(
-            id VARCHAR(8) PRIMARY KEY,
+            id VARCHAR(30) PRIMARY KEY,
             author_name VARCHAR(30),
             author_id VARCHAR(30),
-            parent_id VARCHAR(11),
+            parent_id VARCHAR(30),
             is_root BOOLEAN,
             text TEXT,
             created TIMESTAMP,
@@ -177,9 +177,9 @@ class Database(object):
             gold INT,
             score INT,
             is_distinguished BOOLEAN,
-            thread_id VARCHAR(8),
+            thread_id VARCHAR(30),
             subreddit VARCHAR(30),
-            subreddit_id VARCHAR(9),
+            subreddit_id VARCHAR(30),
             absolute_position INTEGER[],
             nreplies INT,
             thread_begin_timestamp TIMESTAMP,
@@ -191,10 +191,10 @@ class Database(object):
                                           ,self.schema, tablespace))'''
         else:
             self.cur.execute("""CREATE TABLE IF NOT EXISTS %s.comments(
-            id VARCHAR(8),
+            id VARCHAR(30),
             author_name VARCHAR(30),
             author_id VARCHAR(30),
-            parent_id VARCHAR(11),
+            parent_id VARCHAR(30),
             is_root BOOLEAN,
             text TEXT,
             created TIMESTAMP,
@@ -202,9 +202,9 @@ class Database(object):
             gold INT,
             score INT,
             is_distinguished BOOLEAN,
-            thread_id VARCHAR(8),
+            thread_id VARCHAR(30),
             subreddit VARCHAR(30),
-            subreddit_id VARCHAR(9),
+            subreddit_id VARCHAR(30),
             absolute_position INTEGER[],
             nreplies INT,
             thread_begin_timestamp TIMESTAMP,
