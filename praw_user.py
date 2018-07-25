@@ -1,10 +1,10 @@
 import praw
 from praw_object_data import retry_if_broken_connection
 
-client_id = "CLIENT ID"
-secret="SECRET"
-username=''
-password='notapassword'
+client_id = "GULq9J_pOyi4iA"
+secret="ViIRIj82a08aJzkNBMeOsG3noOg"
+username='Clairelovesgrapefrui'
+password='Zzl@19930117reddit'
 user_agent = 'tree grabber for reddit, made by /u/antirabit, run by someone else'
 
 @retry_if_broken_connection
