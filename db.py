@@ -92,7 +92,7 @@ class Database(object):
                                                     self.schema, tablespace))'''
         else:
             self.cur.execute("""CREATE TABLE IF NOT EXISTS %s.threads(
-            id CHAR(6),
+            id CHAR(30),
             title TEXT,
             subreddit VARCHAR(30),
             subreddit_id VARCHAR(30),
